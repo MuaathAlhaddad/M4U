@@ -31,15 +31,17 @@
             <div class="project-item">
                 <div class="project-info">
                 <h1 class="section-question"><span>Q</span>uestion <span>1</span></h1>
-                <center><h2>What are you feeling today?</h2>
-                    <input href="#Q2" type="radio" name="feeling" id="Happy" value="Happy" checked="checked">
+                <h2>What are you feeling today?</h2>
+                    <input type="radio" name="feeling" id="Happy" value="Happy" checked="checked">
                     <label for="Happy">Happy</label>
-                    <input href="#Q2" type="radio" name="feeling" id="Sad" value="Sad">
+                    <input type="radio" name="feeling" id="Sad" value="Sad">
                     <label for="Sad">Sad</label>
-                    <input href="#Q2" type="radio" name="feeling" id="Angry" value="Angry">
+                    <input type="radio" name="feeling" id="Angry" value="Angry">
                     <label for="Angry">Angry</label>
-                    <input href="#Q2" type="radio" name="feeling" id="Scared" value="Scared">
+                    <input type="radio" name="feeling" id="Scared" value="Scared">
                     <label for="Scared">Scared</label>
+                    <input type="radio" name="feeling" id="chilling" value="chilling">
+                    <label for="chilling">chilling</label>
                 </div>
                 <div class="project-img">
                 <img src="./img/11.jpg" alt="img">
@@ -50,34 +52,38 @@
             <div class="project-item">
                 <div class="project-info">
                 <h1 class="section-question"><span>Q</span>uestion <span>2</span></h1>
-                <center><h2>What is the movie language?</h2>
-                    <input href="#Q3" type="radio" name="language" id="English" value="English" checked="checked">
+                <h2>What is the movie language?</h2>
+                    <input type="radio" name="language" id="English" value="English" checked="checked">
                     <label for="English">English</label>
-                    <input href="#Q3" type="radio" name="language" id="Malay" value="Malay">
+                    <input type="radio" name="language" id="Malay" value="Malay">
                     <label for="Malay">Malay</label>
-                    <input href="#Q3" type="radio" name="language" id="Korean" value="Korean">
+                    <input type="radio" name="language" id="Korean" value="Korean">
                     <label for="Korean">Korean</label>
-                    <input href="#Q3" type="radio" name="language" id="Japanies" value="Japanies">
-                    <label for="Japanies">Japanese</label>
+                    <input type="radio" name="language" id="Japanese" value="Japanese">
+                    <label for="Japanese">Japanese</label>
+                    <input type="radio" name="language" id="Indian" value="Indian">
+                    <label for="Indian">Indian</label>
                 </div>
                 <div class="project-img">
                 <img src="./img/hh.jpg" alt="img">
                 <div id="Q3"></div>
-                </div>
+                </div>k
             </div>
             <div class="project-item">
                 <div class="project-info">
                 <!--Q3-->
                 <h1 class="section-question"><span>Q</span>uestion <span>3</span></h1>
-                <center><h2>What is the occasion?</h2>
-                    <input href="#Q3" type="radio" name="occasion" id="Alone" value="Alone" checked="checked">
+                <h2>What is the occasion?</h2>
+                    <input  type="radio" name="occasion" id="Alone" value="Alone" checked="checked">
                     <label for="Alone">Alone</label>
-                    <input href="#Q3" type="radio" name="occasion" id="Date" value="Date">
+                    <input  type="radio" name="occasion" id="Date" value="Date">
                     <label for="Date">Date</label>
-                    <input href="#Q3" type="radio" name="occasion" id="Family" value="Family">
+                    <input  type="radio" name="occasion" id="Family" value="Family">
                     <label for="Family">Family</label>
-                    <input href="#Q3" type="radio" name="occasion" id="Kids" value="Kids">
+                    <input  type="radio" name="occasion" id="Kids" value="Kids">
                     <label for="Kids">Kids</label><br>
+                    <input type="radio" name="occasion" id="Friends" value="Friends">
+                    <label for="Friends">Friends</label><br>
                     <button type="submit" id="Submit" class="q1button" >Submit</button>
                 </div>
                 <div class="project-img">
@@ -128,9 +134,8 @@
             <div class="Donation-item">
             <!-- <div class="icon"><img src="./img/d.png"/></div>-->
             <h2 class="section-title"><span>D</span>onate <span>H</span>ere</h2>
-            <p>key in the amount you like to donate for me.</p>
-            <input type="text" placeholder="RM50">
-            <a href="#" type="button" class="button">Donate</a>
+        <p>Click the button to donate through PayPal.</p>
+        <a href="https://paypal.me/Movies4You" type="button" class="button">Donate</a>
             </div>
         </div>
         </div>

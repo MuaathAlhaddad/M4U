@@ -6,21 +6,28 @@
         <div class="all-projects">
           <div class="project-item">
             <div class="project-info">
-            <h1><div id="answer">The Swords<span>man</span> </div></h1>
+            @isset($movie_title)
+            <h1><div id="answer"> </div></h1>
             <h2>General<span> Info</span> :</h2>
-            <p style="font-size: 1.1rem;">TV-14 | 1h 40min | Action, Drama, History | 23 September 2020 (South Korea)</p>
+            <p style="font-size: 1.1rem;"> <span id="rated"></span>  | <span id="runtime"></span>  | <span id="genre"></span>  | <span id="released"></span> </p>
                 <h2><span>Story</span>Line : </h2>
-              <p>"Three different swordsmen meet each other for their own reasons." Tae Yul, a swordsman in his thirties goes out to find his only daughter after losing one of his eyes. Min Seung Ho, the Joseon Dynasty's best swordsman chooses an ordinary simple life after perceiving the transient nature of power. Gurutai, the best swordsman in Qing Dynasty aspires to become the best even in the Joseon Dynasty.</p><br>
+              <p id="plot">
+                </p><br>
               <div class="Rating-info">
               <img src="./img/imdb.png" alt="img">
-                <p>6.8/10</p>
+                <p id="ratings" ></p>
             </div>
-              <a href="#projects" type="button" id="Submit" class="buttonT">Back</a>
-              <a href="#" type="button" id="Submit" class="buttonimdb">IMDb</a>
+              <a  type="button" onclick="window.history.back()" id="Submit" class="buttonT">Back</a>
+              <a href="#" type="button" id="movie_link" class="buttonimdb">IMDb</a>
           </div>
-      <div class="project-img" id="movie-container" data-movie="{{ $movie_title }}">
-        <img src=" {{asset('img/sssss.jpg') }}" alt="img">
-      </div>
+          <div class="project-img" id="movie-container" data-movie="{{ $movie_title }}">
+              <img id="poster" src="" alt="img">
+          </div>
+          @else
+              No Result Found
+                  <a  type="button" onclick="window.history.back()" id="Submit" class="buttonT">Back</a>
+          @endisset
+
           </div>
         </div>
       </div>
@@ -34,10 +41,22 @@
               $.ajax({
                   type: 'GET',
                   url: 'http://www.omdbapi.com/',
-                  data: {t: 'Aquaman', apikey: '3b6d2ce0'},
+                  data: {t: movie_title, apikey: '3b6d2ce0'},
                   dataType: 'json',
-                  success: function (msg) {
-                  console.log(msg);
+                  success: function (result) {
+                  console.log(result);
+                      $('#answer').html(result.Title);
+                      $('#plot').html(result.Plot);
+                      $('#genre').html(result.Genre);
+                      $('#released').html(result.Released);
+                      $('#runtime').html(result.Runtime);
+                      $('#rated').html(result.Rated);
+                      $('#ratings').html(result.Ratings[0].Value);
+                      $('#poster').attr('src', result.Poster);
+                      $('#movie_link').attr('href', `https://www.imdb.com/title/${result.imdbID}/`);
+
+
+
               }
               });
           </script>

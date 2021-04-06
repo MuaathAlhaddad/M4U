@@ -25,11 +25,18 @@ class TagController extends Controller
      */
     public function result(Request $request)
     {
-        $tag  = Tag::with('movies')->whereLanguage($request['language'])
-                            ->whereFeeling($request['feeling'])
-                            ->whereOccasion($request['occasion'])
-                            ->first();
-        $movies = $tag->movies;
+        try {
+            $tag  = Tag::with('movies')->whereLanguage($request['language'])
+                                ->whereFeeling($request['feeling'])
+                                ->whereOccasion($request['occasion'])
+                                ->first();
+            if(is_null($tag) || empty($tag)) {
+                return view('result');
+            }
+            $movies = $tag->movies;
+        } catch (\Illuminate\Database\QueryException $ex) {
+            return response($ex);
+        }
         $rand_movie = $movies->random();
 
         return view('result', ['movie_title' => $rand_movie->title]);
